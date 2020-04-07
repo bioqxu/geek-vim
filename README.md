@@ -1,10 +1,6 @@
-# legolas-vim
-
-[![Build Status](https://travis-ci.org/TTWShell/legolas-vim.svg?branch=master)](https://travis-ci.org/TTWShell/legolas-vim)
+# geek-vim
 
 个人vim配置。**支持python、go等自动提示，支持python、go的函数跳转（python支持虚拟环境）。** 最终效果图（函数列表的feature已移除，因为大项目会导致性能问题）：
-
-![wx20170920-101535](https://user-images.githubusercontent.com/8017604/30623828-ab21327e-9dec-11e7-89e7-09b2645a987c.png)
 
 支持Python自动补全的最好插件是YouCompleteMe。而YouCompleteMe需要比较高版本的vim(>=7.4.143)，所以，需要编译安装vim，参见相关文档[1]。另外还需要一些C库，参见相关文档[2]。
 
@@ -17,7 +13,7 @@ vim扩展管理器使用的是异步工具[vim-plug](https://github.com/junegunn
 
 **支持Ubuntu、Centos（需要先处理下问题5 sudo vim的问题）、Mac OSX（默认基于brew安装新版vim）**，一键安装：
 
-    cd ~ && rm -rf legolas-vim && git clone https://github.com/TTWShell/legolas-vim.git && cd legolas-vim && bash install.sh INIT
+    git clone https://github.com/qxuchn/geek-vim.git && cd geek-vim && bash install.sh INIT
 
 如果用户修改了vimrc配置文件，运行以下命令更新即可：
 
@@ -117,7 +113,7 @@ vim扩展管理器使用的是异步工具[vim-plug](https://github.com/junegunn
 | Ctrl-y, | emmet自动补全快捷 |
 | -- | -- |
 | F2 | 打开or关闭行号，同时打开or关闭gitgutter（文件变化提示） |
-| F3 | 打开or关闭复制支持 |
+| F9 | 打开or关闭复制支持 |
 | F4 | 折叠or展开代码（默认打开文件不折叠） |
 | F5 | 打开or关闭目录树 |
 | F6 | 打开or关闭语法检查（大文件时影响性能） |
@@ -189,13 +185,6 @@ vim扩展管理器使用的是异步工具[vim-plug](https://github.com/junegunn
 | dd | 删除当前行 |
 | :line**d** | 删除指定行 |
 | :line,line**d** | 删除指定范围内的行 |
-
-
-## 咖啡
-
-收到几个网友请喝咖啡的私信😊😊😊，附上支付宝。
-
-![alipay](alipay.jpg)
 
 # 相关文档
 
