@@ -129,57 +129,25 @@ set complete-=i
 """""""""""""""""""""""""""""""""""""""""""""
 "              Vim UI                       "
 """""""""""""""""""""""""""""""""""""""""""""
-au BufNewFile,BufRead *
-\ set tabstop=4 |
-\ set softtabstop=4 |
-\ set shiftwidth=4 |
-\ set expandtab |
-\ set autoindent |
-\ set fileformat=unix |
-\ set list listchars=tab:>-
-au BufNewFile,BufRead *.c,*.py
-\ set colorcolumn=80
-au BufNewFile,BufRead *.go
-\ set nolist
-au BufNewFile,BufRead *.yml
-\ set tabstop=2 |
-\ set softtabstop=2 |
-\ set shiftwidth=2
-" deal *.tpl
-au BufNewFile,BufRead *.tpl set ft=html
-"
-augroup filetype
-  au! BufRead,BufNewFile *Makefile* set filetype=make
-augroup END
-autocmd FileType make set noexpandtab
 
-"python with virtualenv support
-if has('python3')
-  silent! python3 1
-endif
-py3 << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  exec(compile(open(activate_this, "rb").read(), activate_this, 'exec'), dict(__file__=activate_this))
-EOF
+" virtual tabstops using spaces
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+" allow toggling between local and default mode
+function TabToggle()
+  if &expandtab
+    set shiftwidth=8
+    set softtabstop=0
+    set noexpandtab
+  else
+    set shiftwidth=4
+    set softtabstop=4
+    set expandtab
+  endif
+endfunction
+nmap <F10> mz:execute TabToggle()<CR>'z
 
-" Ctrl-j 切换到下方的分割窗口 - Ctrl-k 切换到上方的分割窗口 - Ctrl-l
-" 切换到右侧的分割窗口 - Ctrl-h 切换到左侧的分割窗口
-" split navigations
-set splitbelow
-set splitright
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-" quick resize split
-nnoremap ˙ <C-W><
-nnoremap ¬ <C-W>>
-nnoremap ∆ <C-W>+
-nnoremap ˚ <C-W>-
 
 " ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -204,13 +172,6 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-" for powerline 已弃用
-" set laststatus=2
-" set term=xterm-256color
-" set termencoding=utf-8
-" set guifont=Ubuntu\ Mono\ derivative\ Powerline:10
-" set guifont=Ubuntu\ Mono
-" let g:Powerline_symbols = 'fancy'
 
 " for airline
 " 使用powerline打过补丁的字体
