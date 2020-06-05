@@ -16,7 +16,7 @@ Plug 'w0rp/ale', {'tag': 'b934dc5'}
 Plug 'bronson/vim-trailing-whitespace'
 
 " multiple selections
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 
 " Colorthemes
 Plug 'altercation/vim-colors-solarized'
@@ -45,14 +45,14 @@ Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 
 " Syntaxes
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'othree/html5.vim'
-Plug 'vim-scripts/nginx.vim'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'elzr/vim-json'
-Plug 'dyng/ctrlsf.vim'
-Plug 'kylef/apiblueprint.vim'
-Plug 'leafgarland/typescript-vim'
+" Plug 'Glench/Vim-Jinja2-Syntax'
+" Plug 'othree/html5.vim'
+" Plug 'vim-scripts/nginx.vim'
+" Plug 'hynek/vim-python-pep8-indent'
+" Plug 'elzr/vim-json'
+" Plug 'dyng/ctrlsf.vim'
+" Plug 'kylef/apiblueprint.vim'
+" Plug 'leafgarland/typescript-vim'
 
 " A Git wrapper so awesome
 Plug 'tpope/vim-fugitive'
